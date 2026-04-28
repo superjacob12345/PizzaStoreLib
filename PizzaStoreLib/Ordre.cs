@@ -12,6 +12,10 @@ namespace PizzaStoreLib
         private string _status;
         private double _totalPris;
         public Ordre(int ordreID, DateTime dato, string status, double totalPris)
+
+
+
+            //konstructør
         {
             _ordreID = ordreID;
             _dato = dato;
@@ -45,6 +49,32 @@ namespace PizzaStoreLib
         {
             get { return _totalPris; }
             set { _totalPris = value; }
+        }
+
+        // CRUD metoder
+        public Ordre CreateOrdre(int ordreID, DateTime dato, string status, double totalPris)
+        {
+            Ordre ordre = new Ordre(ordreID, dato, status, totalPris);
+            return ordre;
+        }
+
+        public Ordre UpdateOrdre(int ordreID, DateTime dato, string status, double totalPris)
+        {
+            Ordre ordre = new Ordre(ordreID, dato, status, totalPris);
+            return ordre;
+        }
+
+        public Ordre ReadOrdre(int ordreID, DateTime dato, string status, double totalPris)
+        {
+            Ordre ordre = new Ordre(ordreID, dato, status, totalPris);
+            return ordre;
+        }
+        public void DeleteOrdre()
+        { 
+            OrdreID = 0;
+            dato = DateTime.Now;
+            status = "";
+            totalPris = 0.0;
         }
         public override string ToString()
         {
