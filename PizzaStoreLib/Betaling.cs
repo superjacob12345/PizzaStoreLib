@@ -31,7 +31,7 @@ namespace PizzaStoreLib
             Betalingsmetode="";
                 _status = "";
                 _metode = "";
-        }
+        }   
         public int BetalingID
         {
             get { return _betalingID; }
@@ -66,5 +66,6 @@ namespace PizzaStoreLib
         {
             return $"Betaling ID: {BetalingID}, Ordre ID: {OrdreID}, Beløb: {Beløb}, Betalingsmetode: {Betalingsmetode}, Status: {Status}, Metode: {Metode}";
         }
+        
     }
 }
