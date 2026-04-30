@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="PizzaApp/PizzaApp.csproj" Id="24f47e52-9f12-4289-baab-0a04a2d9ff00" />
   <Project Path="PizzaStoreLib/PizzaStoreLib.csproj" />
 </Solution>
