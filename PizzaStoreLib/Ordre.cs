@@ -69,6 +69,7 @@ namespace PizzaStoreLib
             Ordre ordre = new Ordre(ordreID, dato, status, totalPris);
             return ordre;
         }
+        
         public void DeleteOrdre()
         { 
             OrdreID = 0;

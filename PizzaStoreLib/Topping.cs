@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using PizzaStoreLib;
 
 namespace PizzaStoreLib
 {
@@ -42,5 +43,48 @@ namespace PizzaStoreLib
         {
             return $"Topping ID: {ToppingID}, Navn: {Navn}, Pris: {Pris}";
         }
+    }
+}
+
+public class Toppings
+//properties
+{
+    public string Navn { get; set; }
+    public double Pris { get; set; }
+    
+    //Liste (database)
+    public static List<Topping> toppings = new List<Topping>();
+     
+    //Create
+    public static void OpretTopping(string navn, double pris)
+
+    {
+        Topping x = new Topping();
+        x.Navn = navn;
+        x.Pris = pris;
+        toppings.Add(x);
+    }
+    //Read 
+
+    public Topping ReadOrdre(int toppingID, string navn, double pris)
+    {
+        Topping topping = new Topping(toppingID,navn, pris);
+        return topping;
+
+    }
+    
+    
+    public Topping UpdateTopping(int toppingID, string navn, string status, double pris)
+    {
+        Topping topping = new Topping(toppingID, navn, pris);
+        return topping;
+    }
+    
+    
+    public void DeleteTopping()
+    { 
+        int ToppingID = 0;
+        string status = "";
+        double pris = 0.0;
     }
 }
