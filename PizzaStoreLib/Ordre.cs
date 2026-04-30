@@ -6,80 +6,46 @@ namespace PizzaStoreLib
 {
     public class Ordre
     {
-        // instans felt
         private int _ordreID;
-        private DateTime _dato;
-        private string _status;
-        private double _totalPris;
-        public Ordre(int ordreID, DateTime dato, string status, double totalPris)
+        private Pizza _pizza;
+        private Kunde _kunde;
 
-
-
-            //konstructør
+        public Ordre(int ordreID, Pizza pizza, Kunde kunde)
         {
             _ordreID = ordreID;
-            _dato = dato;
-            _status = status;
-            _totalPris = totalPris;
+            _pizza = pizza;
+            _kunde = kunde;
         }
-        // properties
-       public Ordre()
-        {
-            OrdreID=0;
-            dato=DateTime.Now;
-            status="";
-            totalPris=0.0;
-        }
+
         public int OrdreID
         {
             get { return _ordreID; }
             set { _ordreID = value; }
         }
-        public DateTime dato
+
+        public Pizza Pizza
         {
-            get { return _dato; }
-            set { _dato = value; }
-        }
-        public string status
-        {
-            get { return _status; }
-            set { _status = value; }
-        }
-        public double totalPris
-        {
-            get { return _totalPris; }
-            set { _totalPris = value; }
+            get { return _pizza; }
+            set { _pizza = value; }
         }
 
-        // CRUD metoder
-        public Ordre CreateOrdre(int ordreID, DateTime dato, string status, double totalPris)
+        public Kunde Kunde
         {
-            Ordre ordre = new Ordre(ordreID, dato, status, totalPris);
-            return ordre;
+            get { return _kunde; }
+            set { _kunde = value; }
         }
 
-        public Ordre UpdateOrdre(int ordreID, DateTime dato, string status, double totalPris)
+        public double CalculateTotalPrice()
         {
-            Ordre ordre = new Ordre(ordreID, dato, status, totalPris);
-            return ordre;
+            double pris = _pizza.Pris;
+            double moms = pris * 0.25;
+
+            return pris + moms + 40; // levering
         }
 
-        public Ordre ReadOrdre(int ordreID, DateTime dato, string status, double totalPris)
-        {
-            Ordre ordre = new Ordre(ordreID, dato, status, totalPris);
-            return ordre;
-        }
-        
-        public void DeleteOrdre()
-        { 
-            OrdreID = 0;
-            dato = DateTime.Now;
-            status = "";
-            totalPris = 0.0;
-        }
         public override string ToString()
         {
-            return $"Ordre ID: {OrdreID}, Dato: {dato}, Status: {status}, Total Pris: {totalPris}";
+            return $"{Kunde.Navn} har bestilt {Pizza.Navn} - Total: {CalculateTotalPrice()} kr";
         }
     }
 }

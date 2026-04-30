@@ -11,9 +11,9 @@ public class BetalingList : Betaling
     {
         _betalinger = new List<Betaling>();
     }
-    public void betalingId(int betalingID, int ordreID, double beløb, string betalingsmetode, string status, string metode)
+    public void betalingId(int betalingID, int ordreID, double beløb, string status, string metode)
     {
-        Betaling betaling = new Betaling(betalingID, ordreID, beløb, betalingsmetode, status, metode);
+        Betaling betaling = new Betaling (betalingID, ordreID, beløb, status, metode);
         _betalinger.Add(betaling);
     }
     public Betaling GetBetalingById(int id)
@@ -30,10 +30,7 @@ public class BetalingList : Betaling
 
 
     }
-    public Betaling GetBetalingByBetalingsmetode(string betalingsmetode)
-    {
-        return _betalinger.Find(b => b.Betalingsmetode == betalingsmetode);
-    }
+ 
     public Betaling GetBetalingByStatus(string status)
     {
         return _betalinger.Find(b => b.Status == status);

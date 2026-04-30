@@ -1,56 +1,47 @@
 ﻿namespace PizzaStoreLib
 {
-    public class Kunde
-    {
-        // instans felt
-        private string _navn;
-        private int _kundeID;
-        private string _adresse;
-        private string _telefonnummer;
-        public Kunde(string navn, int kundeID, string adresse, string telefonnummer)
+    public class Kunde 
         {
-            _navn = navn;
-            _kundeID = kundeID;
-            _adresse = adresse;
-            _telefonnummer = telefonnummer;
-        }
-        // properties
+            private int _kundeID;
+            private string _navn;
+            private string _telefon;
+            private string _adresse;
 
+            public Kunde(int kundeID, string navn, string telefon, string adresse)
+            {
+                _kundeID = kundeID;
+                _navn = navn;
+                _telefon = telefon;
+                _adresse = adresse;
+            }
 
-        public Kunde()
-        {
-            Navn="";
-            KundeID=0;
-            Adresse="";
-            Telefonnummer="";
+            public int KundeID
+            {
+                get { return _kundeID; }
+                set { _kundeID = value; }
+            }
 
-        }
-        public string Navn
-        {
-            get { return _navn; }
-            set { _navn = value; }
-        }
-        public int KundeID
-        {
-            get { return _kundeID; }
-            set { _kundeID = value; }
-        }
-        public string Adresse
-        {
-            get { return _adresse; }
-            set { _adresse = value; }
-        }
-        public string Telefonnummer
-        {
-            get { return _telefonnummer; }
-            set {_telefonnummer = value; }
-        }
-        public override string ToString()
-        {
-            return $"Kunde: {Navn}, ID: {KundeID}, Adresse: {Adresse}, Telefonnummer: {Telefonnummer}";
-        }
+            public string Navn
+            {
+                get { return _navn; }
+                set { _navn = value; }
+            }
 
+            public string Telefon
+            {
+                get { return _telefon; }
+                set { _telefon = value; }
+            }
 
-    }
+            public string Adresse
+            {
+                get { return _adresse; }
+                set { _adresse = value; }
+            }
 
+            public override string ToString()
+            {
+                return $"Kunde: {Navn}, Telefon: {Telefon}";
+            }
+        }
 }

@@ -10,16 +10,14 @@ namespace PizzaStoreLib
         private int _betalingID;
         private int _ordreID;
         private double _beløb;
-        private string _betalingsmetode;
         private string _status;
         private string _metode;
-        public Betaling(int betalingID, int ordreID, double beløb, string betalingsmetode, string status, string metode)
+        public Betaling(int betalingID, int ordreID, double beløb, string status, string metode)
         {
             _betalingID = betalingID;
             _ordreID = ordreID;
             _beløb = beløb;
-            _betalingsmetode = betalingsmetode;
-            _status = status;
+           _status = status;
             _metode = metode;
         }
         // properties
@@ -28,9 +26,8 @@ namespace PizzaStoreLib
             BetalingID=0;
             OrdreID=0;
             Beløb=0.0;
-            Betalingsmetode="";
-                _status = "";
-                _metode = "";
+           _status = "";
+           _metode = "";
         }   
         public int BetalingID
         {
@@ -47,11 +44,6 @@ namespace PizzaStoreLib
             get { return _beløb; }
             set { _beløb = value; }
         }
-        public string Betalingsmetode
-        {
-            get { return _betalingsmetode; }
-            set { _betalingsmetode = value; }
-        }
         public string Status
         {
             get { return _status; }
@@ -64,7 +56,7 @@ namespace PizzaStoreLib
         }
         public override string ToString()
         {
-            return $"Betaling ID: {BetalingID}, Ordre ID: {OrdreID}, Beløb: {Beløb}, Betalingsmetode: {Betalingsmetode}, Status: {Status}, Metode: {Metode}";
+            return $"Betaling ID: {BetalingID}, Ordre ID: {OrdreID}, Beløb: {Beløb}, Status: {Status}, Metode: {Metode}";
         }
         
     }
